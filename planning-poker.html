@@ -2,6 +2,14 @@
 <html>
   <head>
     <title>Planning poker</title>
+    <style type="text/css">
+      input:checked:after {
+        position: absolute;
+        content: attr(value);
+        left: 0;
+        top: 0;
+      }
+    </style>
   </head>
   <body>
     <input type="radio" name="pp" value="0">
