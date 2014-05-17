@@ -2,33 +2,43 @@
 <html>
   <head>
     <title>Planning poker</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
-      /* only works in WebKit browsers */
+      #hide { display: none }
+       /* only works in WebKit browsers */
       /* use label trick for others? */
       input {
         -webkit-appearance: none;
       }
-      input:before {
+      input:not([value|=i]):before {
         content: attr(value);
       }
+      input[value$="?"]:before,
+      input[value$="break"]:before {
+        font-family: FontAwesome;
+      }
+      input[value$="?"]:before {
+        content: "\f128";
+      }
+      input[value$="break"]:before {
+        content: "\f0f4";
+      }
+      label,
       input:not(#hide):checked:after {
-        content: attr(value);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+      input:not(#hide):checked:after {
         background-color: white;
         text-align: center;
         font-size: 20em;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
+        content: attr(value);
       }
-      input + label {
-        position: absolute;
+      label {
         z-index: 1;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
       }
       input:checked + label {
         display: none;
@@ -48,7 +58,7 @@
     <input type="radio" name="pp" value="20">
     <input type="radio" name="pp" value="40">
     <input type="radio" name="pp" value="100">
-    <input type="radio" name="pp" value="?">
-    <input type="radio" name="pp" value="break">
+    <input type="radio" name="pp" value="i-?">
+    <input type="radio" name="pp" value="i-break">
   </body>
 </html>
