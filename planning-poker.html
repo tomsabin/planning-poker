@@ -3,6 +3,14 @@
   <head>
     <title>Planning poker</title>
     <style type="text/css">
+      /* only works in WebKit browsers */
+      /* use label trick for others? */
+      input {
+        -webkit-appearance: none;
+      }
+      input:before {
+        content: attr(value);
+      }
       input:checked:after {
         position: absolute;
         content: attr(value);
