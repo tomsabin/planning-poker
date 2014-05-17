@@ -11,14 +11,20 @@
       input:before {
         content: attr(value);
       }
-      input:checked:after {
-        position: absolute;
+      input:not(#hide):checked:after {
         content: attr(value);
+        background-color: white;
+        text-align: center;
+        font-size: 20em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
         left: 0;
         top: 0;
       }
       input + label {
         position: absolute;
+        z-index: 1;
         bottom: 0;
         right: 0;
         left: 0;
