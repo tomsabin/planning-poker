@@ -17,9 +17,21 @@
         left: 0;
         top: 0;
       }
+      input + label {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+      input:checked + label {
+        display: none;
+      }
     </style>
   </head>
   <body>
+    <input type="radio" name="pp" value="" checked="1" id="hide">
+    <label for="hide"></label>
     <input type="radio" name="pp" value="0">
     <input type="radio" name="pp" value="1">
     <input type="radio" name="pp" value="2">
