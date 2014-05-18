@@ -4,61 +4,84 @@
     <title>Planning poker</title>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
-      #hide { display: none }
-       /* only works in WebKit browsers */
-      /* use label trick for others? */
-      input {
-        -webkit-appearance: none;
-      }
-      input:not([value|=i]):before {
-        content: attr(value);
-      }
-      input[value$="?"]:before,
-      input[value$="break"]:before {
-        font-family: FontAwesome;
-      }
-      input[value$="?"]:before {
-        content: "\f128";
-      }
-      input[value$="break"]:before {
-        content: "\f0f4";
-      }
-      label,
-      input:not(#hide):checked:after {
+      html, body { height: 100% }
+      body { margin: 0 }
+
+      /* Functionality */
+
+      label[for=hide] {
         position: absolute;
+        display: none;
+        z-index: 1;
         bottom: 0;
         right: 0;
         left: 0;
         top: 0;
       }
-      input:not(#hide):checked:after {
-        background-color: white;
-        text-align: center;
-        font-size: 20em;
+      label:not([for=hide]) {
+        display: block;
+        height: 25%;
+        width: 33.33%;
+        float: left;
+      }
+      input:not(#hide):not([value=break]):checked:after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
         content: attr(value);
       }
-      label {
-        z-index: 1;
-      }
-      input:checked + label {
+      input {
+        -webkit-appearance: none;
         display: none;
+      }
+      input:checked {
+        display: block;
+      }
+      input:not(#hide):checked ~ label[for=hide] {
+        display: block;
+      }
+      input:not(#hide):checked ~ label:not([for=hide]) {
+        display: none;
+      }
+
+      /* Fonts */
+      label[for="vb"]:before,
+      input[value="break"]:before {
+        font-family: FontAwesome;
+        content: "\f0f4";
       }
     </style>
   </head>
   <body>
+    <input type="radio" name="pp" value="0" id="v0">
+    <input type="radio" name="pp" value="1" id="v1">
+    <input type="radio" name="pp" value="2" id="v2">
+    <input type="radio" name="pp" value="3" id="v3">
+    <input type="radio" name="pp" value="5" id="v5">
+    <input type="radio" name="pp" value="8" id="v8">
+    <input type="radio" name="pp" value="13" id="v13">
+    <input type="radio" name="pp" value="20" id="v20">
+    <input type="radio" name="pp" value="40" id="v40">
+    <input type="radio" name="pp" value="100" id="v100">
+    <input type="radio" name="pp" value="?" id="vq">
+    <input type="radio" name="pp" value="break" id="vb">
+
+    <label for="v0">0</label>
+    <label for="v1">1</label>
+    <label for="v2">2</label>
+    <label for="v3">3</label>
+    <label for="v5">5</label>
+    <label for="v8">8</label>
+    <label for="v13">13</label>
+    <label for="v20">20</label>
+    <label for="v40">40</label>
+    <label for="v100">100</label>
+    <label for="vq">?</label>
+    <label for="vb"></label>
+
     <input type="radio" name="pp" value="" checked="1" id="hide">
     <label for="hide"></label>
-    <input type="radio" name="pp" value="0">
-    <input type="radio" name="pp" value="1">
-    <input type="radio" name="pp" value="2">
-    <input type="radio" name="pp" value="3">
-    <input type="radio" name="pp" value="5">
-    <input type="radio" name="pp" value="8">
-    <input type="radio" name="pp" value="13">
-    <input type="radio" name="pp" value="20">
-    <input type="radio" name="pp" value="40">
-    <input type="radio" name="pp" value="100">
-    <input type="radio" name="pp" value="i-?">
-    <input type="radio" name="pp" value="i-break">
   </body>
 </html>
