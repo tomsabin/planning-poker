@@ -17,22 +17,15 @@
         left: 0;
         top: 0;
       }
-      input {
-        visibility: hidden;
-        display: none;
-      }
-      .full-card {
-        display: none;
-      }
-      input.thumb-card:checked ~ #hider {
-        visibility: visible;
-        display: block;
-      }
+      input,
+      .full-card,
       input.thumb-card:checked ~ label.thumb-card {
         visibility: hidden;
         display: none;
       }
-      input:checked + .full-card {
+      input:checked + .full-card,
+      input.thumb-card:checked ~ #hider {
+        visibility: visible;
         display: block;
       }
 
