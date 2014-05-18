@@ -4,61 +4,93 @@
     <title>Planning poker</title>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
-      #hide { display: none }
-       /* only works in WebKit browsers */
-      /* use label trick for others? */
-      input {
-        -webkit-appearance: none;
+      html, body { height: 100% }
+      body { margin: 0 }
+
+      /* Functionality */
+      #hider {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
       }
-      input:not([value|=i]):before {
-        content: attr(value);
+      input,
+      .full-card,
+      input.thumb-card:checked ~ label.thumb-card {
+        visibility: hidden;
+        display: none;
       }
-      input[value$="?"]:before,
-      input[value$="break"]:before {
-        font-family: FontAwesome;
+      input:checked + .full-card,
+      input.thumb-card:checked ~ #hider {
+        visibility: visible;
+        display: block;
       }
-      input[value$="?"]:before {
-        content: "\f128";
+
+      /* Styling */
+      label.thumb-card {
+        display: block;
+        height: 25%;
+        width: 33.33%;
+        float: left;
       }
-      input[value$="break"]:before {
-        content: "\f0f4";
-      }
-      label,
-      input:not(#hide):checked:after {
+      .full-card {
         position: absolute;
         bottom: 0;
         right: 0;
         left: 0;
         top: 0;
       }
-      input:not(#hide):checked:after {
-        background-color: white;
-        text-align: center;
-        font-size: 20em;
-        content: attr(value);
-      }
-      label {
-        z-index: 1;
-      }
-      input:checked + label {
-        display: none;
+
+      /* Fonts */
+      .break:before {
+        font-family: FontAwesome;
+        content: "\f0f4";
       }
     </style>
   </head>
   <body>
+    <input class="thumb-card" type="radio" name="pp" value="0" id="v0">
+    <div class="full-card">0</div>
+    <input class="thumb-card" type="radio" name="pp" value="1" id="v1">
+    <div class="full-card">1</div>
+    <input class="thumb-card" type="radio" name="pp" value="2" id="v2">
+    <div class="full-card">2</div>
+    <input class="thumb-card" type="radio" name="pp" value="3" id="v3">
+    <div class="full-card">3</div>
+    <input class="thumb-card" type="radio" name="pp" value="5" id="v5">
+    <div class="full-card">5</div>
+    <input class="thumb-card" type="radio" name="pp" value="8" id="v8">
+    <div class="full-card">8</div>
+    <input class="thumb-card" type="radio" name="pp" value="13" id="v13">
+    <div class="full-card">13</div>
+    <input class="thumb-card" type="radio" name="pp" value="20" id="v20">
+    <div class="full-card">20</div>
+    <input class="thumb-card" type="radio" name="pp" value="40" id="v40">
+    <div class="full-card">40</div>
+    <input class="thumb-card" type="radio" name="pp" value="100" id="v100">
+    <div class="full-card">100</div>
+    <input class="thumb-card" type="radio" name="pp" value="vq" id="vq">
+    <div class="full-card">?</div>
+    <input class="thumb-card" type="radio" name="pp" value="vb" id="vb">
+    <div class="full-card break"></div>
+
+    <label class="thumb-card" for="v0">0</label>
+    <label class="thumb-card" for="v1">1</label>
+    <label class="thumb-card" for="v2">2</label>
+    <label class="thumb-card" for="v3">3</label>
+    <label class="thumb-card" for="v5">5</label>
+    <label class="thumb-card" for="v8">8</label>
+    <label class="thumb-card" for="v13">13</label>
+    <label class="thumb-card" for="v20">20</label>
+    <label class="thumb-card" for="v40">40</label>
+    <label class="thumb-card" for="v100">100</label>
+    <label class="thumb-card" for="vq">?</label>
+    <label class="thumb-card break" for="vb"></label>
+
     <input type="radio" name="pp" value="" checked="1" id="hide">
-    <label for="hide"></label>
-    <input type="radio" name="pp" value="0">
-    <input type="radio" name="pp" value="1">
-    <input type="radio" name="pp" value="2">
-    <input type="radio" name="pp" value="3">
-    <input type="radio" name="pp" value="5">
-    <input type="radio" name="pp" value="8">
-    <input type="radio" name="pp" value="13">
-    <input type="radio" name="pp" value="20">
-    <input type="radio" name="pp" value="40">
-    <input type="radio" name="pp" value="100">
-    <input type="radio" name="pp" value="i-?">
-    <input type="radio" name="pp" value="i-break">
+    <label for="hide" id="hider"></label>
   </body>
 </html>
