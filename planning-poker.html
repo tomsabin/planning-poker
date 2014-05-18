@@ -3,17 +3,11 @@
   <head>
     <title>Planning poker</title>
     <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet' type='text/css'>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
       html, body { height: 100% }
       body { margin: 0 }
-
-      /* Fonts */
-      @font-face {
-        font-family: "Barlow";
-        src: url("fonts/barlow.woff") format("woff");
-      }
-      body { font-family: "Barlow" }
 
       /* Functionality */
       #hider {
@@ -52,7 +46,6 @@
         top: 0;
       }
       .card {
-        border-spacing: 0.5vmin;
         text-align: center;
         display: table;
         height: 100%;
@@ -61,16 +54,20 @@
       .card-value {
         vertical-align: middle;
         display: table-cell;
-        border: 1px solid black;
       }
-      .thumb-card .card-value {
-        border-radius: 2vmin;
+      .full-card:nth-of-type(even),
+      .thumb-card:nth-of-type(even) {
+        background-color: rgba(255,255,255,0.05)
       }
-      .full-card .card-value {
-        border-radius: 6vmin;
+      body {
+        background-color: #80b7d8;
+        color: white;
       }
+
+      /* Typography */
+      body { font-family: 'Zeyada', cursive }
       .thumb-card { font-size: 1em; font-size: 12vmin }
-      .full-card { font-size: 3em; font-size: 36vmin }
+      .full-card { font-size: 3em; font-size: 60vmin }
     </style>
   </head>
   <body>
