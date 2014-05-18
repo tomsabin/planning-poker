@@ -8,6 +8,13 @@
       html, body { height: 100% }
       body { margin: 0 }
 
+      /* Fonts */
+      @font-face {
+        font-family: "Barlow";
+        src: url("fonts/barlow.woff") format("woff");
+      }
+      body { font-family: "Barlow" }
+
       /* Functionality */
       #hider {
         position: absolute;
@@ -45,6 +52,7 @@
         top: 0;
       }
       .card {
+        border-spacing: 0.5vmin;
         text-align: center;
         display: table;
         height: 100%;
@@ -53,10 +61,14 @@
       .card-value {
         vertical-align: middle;
         display: table-cell;
+        border: 1px solid black;
       }
-
-      /* Fonts */
-      body { font-family: "Barlow" }
+      .thumb-card .card-value {
+        border-radius: 2vmin;
+      }
+      .full-card .card-value {
+        border-radius: 6vmin;
+      }
       .thumb-card { font-size: 1em; font-size: 12vmin }
       .full-card { font-size: 3em; font-size: 36vmin }
     </style>
