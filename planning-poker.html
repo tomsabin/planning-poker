@@ -43,53 +43,157 @@
         left: 0;
         top: 0;
       }
+      .card {
+        text-align: center;
+        display: table;
+        height: 100%;
+        width: 100%;
+      }
+      .card-value {
+        vertical-align: middle;
+        display: table-cell;
+      }
 
       /* Fonts */
-      .break:before {
-        font-family: FontAwesome;
-        content: "\f0f4";
       }
     </style>
   </head>
   <body>
+    <!-- full cards -->
     <input class="thumb-card" type="radio" name="pp" value="0" id="v0">
-    <div class="full-card">0</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">0</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="1" id="v1">
-    <div class="full-card">1</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">1</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="2" id="v2">
-    <div class="full-card">2</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">2</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="3" id="v3">
-    <div class="full-card">3</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">3</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="5" id="v5">
-    <div class="full-card">5</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">5</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="8" id="v8">
-    <div class="full-card">8</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">8</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="13" id="v13">
-    <div class="full-card">13</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">13</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="20" id="v20">
-    <div class="full-card">20</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">20</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="40" id="v40">
-    <div class="full-card">40</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">40</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="100" id="v100">
-    <div class="full-card">100</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">100</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="vq" id="vq">
-    <div class="full-card">?</div>
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value">?</span>
+      </div>
+    </div>
     <input class="thumb-card" type="radio" name="pp" value="vb" id="vb">
-    <div class="full-card break"></div>
-
-    <label class="thumb-card" for="v0">0</label>
-    <label class="thumb-card" for="v1">1</label>
-    <label class="thumb-card" for="v2">2</label>
-    <label class="thumb-card" for="v3">3</label>
-    <label class="thumb-card" for="v5">5</label>
-    <label class="thumb-card" for="v8">8</label>
-    <label class="thumb-card" for="v13">13</label>
-    <label class="thumb-card" for="v20">20</label>
-    <label class="thumb-card" for="v40">40</label>
-    <label class="thumb-card" for="v100">100</label>
-    <label class="thumb-card" for="vq">?</label>
-    <label class="thumb-card break" for="vb"></label>
-
+    <div class="full-card">
+      <div class="card">
+        <span class="card-value"><i class="fa fa-coffee"></i></span>
+      </div>
+    </div>
+    <!-- thumb cards -->
+    <label class="thumb-card" for="v0">
+      <div class="card">
+        <span class="card-value">0</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v1">
+      <div class="card">
+        <span class="card-value">1</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v2">
+      <div class="card">
+        <span class="card-value">2</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v3">
+      <div class="card">
+        <span class="card-value">3</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v5">
+      <div class="card">
+        <span class="card-value">5</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v8">
+      <div class="card">
+        <span class="card-value">8</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v13">
+      <div class="card">
+        <span class="card-value">13</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v20">
+      <div class="card">
+        <span class="card-value">20</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v40">
+      <div class="card">
+        <span class="card-value">40</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="v100">
+      <div class="card">
+        <span class="card-value">100</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="vq">
+      <div class="card">
+        <span class="card-value">?</span>
+      </div>
+    </label>
+    <label class="thumb-card" for="vb">
+      <div class="card">
+        <span class="card-value"><i class="fa fa-coffee"></i></span>
+      </div>
+    </label>
+    <!-- hider -->
     <input type="radio" name="pp" value="" checked="1" id="hide">
     <label for="hide" id="hider"></label>
   </body>
