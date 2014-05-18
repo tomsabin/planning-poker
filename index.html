@@ -38,10 +38,20 @@
       }
 
       /* Styling */
+      @media (orientation:portrait) {
+        label.thumb-card {
+          width: 33.33vw;
+          height: 25vh;
+        }
+      }
+      @media (orientation:landscape) {
+        label.thumb-card {
+          height: 33.33vh;
+          width: 25vw;
+        }
+      }
       label.thumb-card {
         display: block;
-        height: 25vh;
-        width: 33.33vw;
         float: left;
       }
       .full-card {
